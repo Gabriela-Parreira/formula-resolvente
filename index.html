@@ -8,12 +8,17 @@
 
   <script>
     let a = Number(prompt("Valor de a:"));
+    while (a === 0 || Number.isNaN(a)) {
+      alert("0 valor de ´a´ não pode ser zero!");
+    }
     let b = Number(prompt("Valor de b:"));
     let c = Number(prompt("Valor de c:"));
     let delta = b * b - 4 * a * c;
     if (delta >= 0) {
       let x1 = (-b + Math.sqrt(delta)) / (2 * a);
       let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+      let x1Arred = x1.toFixed(2);
+      let x2Arred = x2.toFixed(2);
       alert("x1 = " + x1 + " e x2 = " + x2);
     } else {
       alert("Não existem raízes reais.");
